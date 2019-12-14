@@ -2,8 +2,15 @@
 
 import math
 
+
 def recipe_batches(recipe, ingredients):
-  pass 
+    m = None
+    for k in recipe.keys():
+        if k not in ingredients.keys():
+            return 0
+        if ingredients[k] // recipe[k] < m if m != None else True:
+            m = ingredients[k] // recipe[k]
+    return m if m != None else 0
 
 
 if __name__ == '__main__':
